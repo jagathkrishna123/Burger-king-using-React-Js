@@ -16,8 +16,8 @@ import Footer from "../assets/footer.svg"
 
 const ComboOffer = () => {
   return (
-    <div className='w-full h-[762px] flex flex-row relative'>
-        <div className='flex flex-col items-center justify-center bg-gray-300 flex-1'>
+    <div className='bg-gray-300 w-full h-[762px] flex flex-col md:flex-row relative gap-3 md:gap-0 '>
+        <div className='flex flex-col items-center justify-center  flex-1 m-4 md:m-0 '>
             <div className='flex flex-col'>
                 <div className='leading-none'>
                 <p className='font-oswald font-bold text-[17px] text-[#00A149]'>CRISPY, EVERY BITE TASTE</p>

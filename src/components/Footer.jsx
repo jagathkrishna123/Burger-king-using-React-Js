@@ -4,16 +4,19 @@ import Food2 from "../assets/food2.svg"
 import Food3 from "../assets/food3.svg"
 import Food4 from "../assets/food4.svg"
 import Food5 from "../assets/food5.svg"
+import Footerleft from "../assets/footerleft.svg"
+import Footerright from "../assets/footerright.svg"
+
 
 const Footer = () => {
   return (
     <div className='flex flex-col mt-[40px]'>
-        <div className=' flex flex-row flex-wrap justify-center'>
-            <img src={Food1} alt="" className='w-[300px] h-auto'/>
-            <img src={Food2} alt="" className='w-[300px] h-auto'/>
-            <img src={Food3} alt="" className='w-[300px] h-auto'/>
-            <img src={Food4} alt="" className='w-[300px] h-auto'/>
-            <img src={Food5} alt="" className='w-[300px] h-auto'/>
+        <div className='flex flex-wrap justify-center'>
+            <img src={Food1} alt="" className='w-40 sm:w-48 md:w-60 h-auto'/>
+            <img src={Food2} alt="" className='w-40 sm:w-48 md:w-60 h-auto'/>
+            <img src={Food3} alt="" className='w-40 sm:w-48 md:w-60 h-auto'/>
+            <img src={Food4} alt="" className='w-40 sm:w-48 md:w-60 h-auto'/>
+            <img src={Food5} alt="" className='w-40 sm:w-48 md:w-60 h-auto'/>
         </div>
         <div className='w-full h-full flex flex-col m-[50px]'>
             <div className='flex flex-row justify-evenly'>
@@ -73,7 +76,10 @@ const Footer = () => {
                   </div>
                 </div>
             </div>
-
+              {/* <div className='relative'>
+                <img src={Footerleft} alt="" className='absolute right-0'/>
+                <img src={Footerright} alt="" className='absolute'/>
+              </div> */}
         </div>
     </div>
   )

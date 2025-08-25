@@ -5,7 +5,7 @@ import Cart from "../assets/cart.svg"
 
 const Navbar = () => {
   return (
-    <div className='w-full h-[97px] bg-white flex justify-between items-center pl-[40px] pr-[40px]'>
+    <div className='w-full h-[80px] bg-white flex justify-between items-center pl-[40px] pr-[40px]'>
         <div className='flex flex-row items-center pt-3 cursor-pointer'>
             <img src={Pzlogo} alt="" className='w-[119px] h-[67px]' />
             <p className='font-fugaz text-[#EE3A43] text-[24px]'>pizza hut</p>

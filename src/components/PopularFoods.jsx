@@ -9,6 +9,8 @@ import F7 from "../assets/f7.svg"
 import F8 from "../assets/f8.svg"
 import Like from "../assets/like.svg"
 import Car from "../assets/car.svg"
+import { motion } from 'framer-motion'
+
 
 
 
@@ -83,7 +85,9 @@ const PopularFoods = () => {
         },
     ]
   return (
-    <div className='w-full bg-gray-100 py-16 px-6'>
+    <motion.div initial={{ opacity: 0, y: 150 }}   // larger offset
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }} className='w-full bg-gray-100 py-16 px-6'>
         <div className='text-center mb-10'>
             <p className='text-[17px] font-bold font-oswald text-[#00A149]'>crispy, every bite taste</p>
             <p className='text-[60px] font-bold font-oswald text-[#212121]'>Popular Fast Foods</p>
@@ -92,17 +96,19 @@ const PopularFoods = () => {
         <div className="flex justify-center">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
                 {products.map((item) => (
-                <div
+                <motion.div initial={{ y: -150, opacity: 0 }}   // start above, invisible
+                    animate={{ y: 0, opacity: 1 }}      // land in place
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                     key={item.id}
                     className="bg-white rounded w-[210px] h-[340px] hover:shadow-xl p-4 relative transition">
                     <button>
-                    <img src={Like} alt="" className="absolute -top-5 left-3 w-[60px]"/>
+                        <img src={Like} alt="" className="absolute -top-5 left-3 w-[60px]"/>
                     </button>
                     <img src={item.img} alt="" className="w-[150px] h-[150px] ml-6" />
 
                     <div className='mt-[70px]'>
                     <div className='flex flex-row items-center justify-center'>
-                    <span className='bg-[#FFC222] rounded-[2px] px-2 py-1'>{item.discount}</span>
+                        <span className='bg-[#FFC222] rounded-[2px] px-2 py-1'>{item.discount}</span>
                     <div className='flex gap-2 p-2 items-baseline'>
                         <span className='font-oswald text-[17px] font-[400] text-[#5C5C5B] line-through'>{item.oldPrice}</span>
                         <span className='font-oswald font-[600] text-[#5C5C5B] text-[16px]'>{item.newPrice}</span>
@@ -110,17 +116,17 @@ const PopularFoods = () => {
                     </div>
                     <p className='text-center font-oswald text-[17px] font-[600] text-[#212121]'>{item.title}</p>
                     </div>
-                </div>
+                </motion.div>
                 ))}
             </div>
         </div>
              <div className='flex items-center justify-center mt-5'>
                 <button className='bg-[#EE284B] rounded-[9px]  font-oswald font-semibold w-[170px] h-[50px] text-white items-center justify-center flex flex-row gap-2 mt-3 transition-transform duration-300 hover:-translate-y-2'>
-                <img src={Car} alt="" className='transition-transform duration-300 hover:-translate-x-3' />
-                <p className='text-[17px]'>View More</p>
+                    <img src={Car} alt="" className='transition-transform duration-300 hover:-translate-x-3' />
+                    <p className='text-[17px]'>View More</p>
             </button>
             </div>                   
-    </div>
+    </motion.div>
   )
 }
 

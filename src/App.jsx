@@ -12,7 +12,7 @@ import Componet10 from './components/Componet10'
 import Review from './components/Review'
 import Delivery from './components/Delivery'
 import Footer from './components/Footer'
-
+import Test from './components/Test'
 const App = () => {
   return (
     <div className='overflow-x-hidden'>
@@ -31,6 +31,7 @@ const App = () => {
       <Review/>
       <Delivery/>
       <Footer/>
+      <Test/>
     </div>
   )
 }
