@@ -28,8 +28,8 @@ const datas = [
 ]
 const Services = () => {
   return (
-    <div className='w-full h-full flex flex-col justify-center items-center mt-[40px]'>
-        <div className='bg-[#EE284B] rounded-[14px] md:w-[900px] md:h-auto flex flex-col md:flex-row items-center'>
+    <div className='w-full h-full flex flex-col justify-center items-center mt-[40px] md:mt-[20px] p-2 md:p-0'>
+        <div className='bg-[#EE284B] rounded-[14px] w-auto h-auto md:w-[900px] md:h-auto flex flex-col md:flex-row items-center '>
             {datas.map((item, index)=> (
                 <div className='justify-around flex m-[40px]'>
                 <div key={index} className='items-start flex flex-col bg-[#EE284B] justify-evenly'>

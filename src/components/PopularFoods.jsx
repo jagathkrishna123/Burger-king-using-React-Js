@@ -85,46 +85,46 @@ const PopularFoods = () => {
         },
     ]
   return (
-    <motion.div initial={{ opacity: 0, y: 150 }}   // larger offset
+    <motion.div initial={{ opacity: 0, y: 150 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }} className='w-full bg-gray-100 py-16 px-6'>
+        transition={{ duration: 1, ease: "easeOut" }} className='w-full bg-gray-100 py-16 px-6' id='fastfoods'>
         <div className='text-center mb-10'>
             <p className='text-[17px] font-bold font-oswald text-[#00A149]'>crispy, every bite taste</p>
-            <p className='text-[60px] font-bold font-oswald text-[#212121]'>Popular Fast Foods</p>
+            <p className='text-[36px] md:text-[50px] font-bold font-oswald text-[#212121]'>Popular Fast Foods</p>
         </div>
 
         <div className="flex justify-center">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-9">
                 {products.map((item) => (
-                <motion.div initial={{ y: -150, opacity: 0 }}   // start above, invisible
-                    animate={{ y: 0, opacity: 1 }}      // land in place
+                <motion.div initial={{ y: -150, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}     
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     key={item.id}
-                    className="bg-white rounded w-[210px] h-[340px] hover:shadow-xl p-4 relative transition">
+                    className="bg-white rounded-lg w-full max-w-[190px] md:max-w-[210px] md:h-fit shadow-lg hover:shadow-2xl px-8 py-3 relative transition">
                     <button>
-                        <img src={Like} alt="" className="absolute -top-5 left-3 w-[60px]"/>
+                        <img src={Like} alt="" className="absolute -top-[10px] md:-top-5 left-3 w-[45px] md:w-[60px]"/>
                     </button>
-                    <img src={item.img} alt="" className="w-[150px] h-[150px] ml-6" />
+                    <img src={item.img} alt="" className="w-[90px] h-[90px] md:w-[150px] md:h-[150px] flex justify-center" />
 
-                    <div className='mt-[70px]'>
+                    <div className='mt-1 md:mt-[40px]'>
                     <div className='flex flex-row items-center justify-center'>
-                        <span className='bg-[#FFC222] rounded-[2px] px-2 py-1'>{item.discount}</span>
+                        <span className='bg-[#FFC222] rounded-[2px] md:px-2 md:py-1 text-[#212121] font-semibold text-[14px] md:text-[16px]'>{item.discount}</span>
                     <div className='flex gap-2 p-2 items-baseline'>
-                        <span className='font-oswald text-[17px] font-[400] text-[#5C5C5B] line-through'>{item.oldPrice}</span>
-                        <span className='font-oswald font-[600] text-[#5C5C5B] text-[16px]'>{item.newPrice}</span>
+                        <span className='font-oswald text-[13px] md:text-[17px] font-[400] text-[#5C5C5B] line-through'>{item.oldPrice}</span>
+                        <span className='font-oswald font-[600] text-[#5C5C5B] text-[14px] md:text-[16px]'>{item.newPrice}</span>
                     </div>
                     </div>
-                    <p className='text-center font-oswald text-[17px] font-[600] text-[#212121]'>{item.title}</p>
+                    <p className='text-center font-oswald text-[15px] md:text-[17px] font-[600] text-[#212121]'>{item.title}</p>
                     </div>
                 </motion.div>
                 ))}
             </div>
         </div>
              <div className='flex items-center justify-center mt-5'>
-                <button className='bg-[#EE284B] rounded-[9px]  font-oswald font-semibold w-[170px] h-[50px] text-white items-center justify-center flex flex-row gap-2 mt-3 transition-transform duration-300 hover:-translate-y-2'>
-                    <img src={Car} alt="" className='transition-transform duration-300 hover:-translate-x-3' />
-                    <p className='text-[17px]'>View More</p>
-            </button>
+                <button className='bg-[#EE284B] rounded-[9px]  font-oswald font-semibold w-[110px] h-[40px] md:w-[170px] md:h-[50px] text-white items-center justify-center flex flex-row gap-2 mt-3 transition-transform duration-300 hover:-translate-y-2'>
+                    <img src={Car} alt="" className='transition-transform duration-300 hover:-translate-x-3 w-[18px] md:w-[22px]' />
+                    <p className='text-[14px] md:text-[17px]'>View More</p>
+                </button>
             </div>                   
     </motion.div>
   )

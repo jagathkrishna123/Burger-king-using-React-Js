@@ -40,37 +40,37 @@ const carddetails = [
 
 const PopularItems = () => {
   return (
-    <div className='w-full h-full bg-slate-100 items-center justify-center md:px-20 mt-[80px]'>
-        <div className='flex flex-row justify-around p-[20px] md:p-[50px]'>
-            <div className=''>
+    <div className='w-full h-full bg-slate-100 items-center justify-center md:px-20 mt-[80px]' id='items'>
+        <div className='flex flex-row p-[10px] md:p-[50px] gap-auto justify-between'>
+            <div className='flex flex-col'>
                 <p className='font-oswald font-bold text-[17px] text-[#00A149]'>crispy, every bite taste</p>
-                <p className='font-oswald font-bold text-[55px] text-[#212121]'>Popular Food Items</p>
+                <p className='font-oswald font-bold text-[36px] md:text-[50px] text-[#212121] flex '>Popular Food Items</p>
             </div>
-            <div className='flex flex-row items-center justify-end'>
-                <img src={arrowleft} alt="" className='mb-3 w-[50px]'/>
-                <img src={arrowright} alt="" className='w-[70px]'/>
+            <div className='flex flex-row '>
+                <img src={arrowleft} alt="" className='mb-3 w-[32px] md:w-[50px] invert'/>
+                <img src={arrowright} alt="" className='w-[50px] md:w-[60px]'/>
             </div>
         </div>
-        <div className='flex flex-col items-center justify-around'>
+        <div className='w-full'>
 
-            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-6'>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mt-6 px-2'>
                 {carddetails.map((item, index)=> (
                     
                     <motion.div initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }} key={index} className=" rounded-[14px] shadow-2xl hover:shadow-lg text-center transition bg-white w-[200px] h-[280px] cursor-pointer mb-3">
+                        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }} key={index} className=" rounded-[14px] shadow-2xl hover:shadow-lg text-center transition bg-white w-full h-auto cursor-pointer p-2">
                         <img src={item.img} alt={item.title}
                         className="mx-auto object-contain mb-4 top-[20px] left-[39px] w-[150px] h-[150px]"/>
-                        <h3 className="font-bold font-oswald text-[28px]">{item.title}</h3>
+                        <h3 className="font-bold font-oswald text-[20px] md:text-[28px]">{item.title}</h3>
                         <p className="text-[#FFC222] text-[17px] font-semibold font-oswald">{item.products}</p>
                     </motion.div>
                 ))}
             </div>
         </div>
         <div className='flex flex-col gap-4'>
-        <div className='flex flex-col md:flex-row items-center justify-center mt-[25px] gap-2 relative'>
-            <img src={Banner1} alt="" className='w-[513px] h-[350px] rounded-[20px]'/>
-            <img src={Banner2} alt="" className='w-[727px] h-[350px]'/>
+        <div className='flex flex-col md:flex-row items-center justify-center mt-[25px] gap-2 relative mb-2'>
+            <img src={Banner1} alt="" className='w-[313px] h-[180px] md:w-[513px] md:h-[280px] rounded-[20px]'/>
+            <img src={Banner2} alt="" className='w-[680px] h-[280px] p-2'/>
             <img src={Chilly2} alt="" className='absolute -left-[80px]' />
             <img src={Burgersketch} alt="" className='absolute -right-[100px]' />
         </div>
