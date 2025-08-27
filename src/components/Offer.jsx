@@ -3,6 +3,8 @@ import BgImage from "../assets/bgimage.jpg";
 import Car from "../assets/car.svg"
 import Leaves from "../assets/leaves.svg"
 import Frenfries from "../assets/frenchfries.svg"
+import { motion } from 'framer-motion';
+
 
 const Offer = () => {
   return (
@@ -12,10 +14,12 @@ const Offer = () => {
                 <p className='text-white text-[20px] md:text-[28px] font-semibold font-oswald mb-2'>Save 20%</p>
                 <h1 className='font-bold text-[40px] md:text-[60px] font-oswald text-white'>Today's <span className='text-[#FFC222]'>Astackin</span> Day</h1>
                 <p className='text-[36px] font-bold font-oswald text-white'>Grilled <span className='text-[#FFC222]'>Chiken</span><span className='text-[#FFC222] ml-2'>$59,00</span></p>
-                <button className="px-6 py-3 md:px-8 md:py-4 font-oswald text-white bg-[#00A149] rounded-lg text-sm md:text-lg flex gap-2">
+                <motion.button initial={{y: 30, opacity: 0}}
+                    whileInView={{y: 0, opacity: 1}}
+                    transition={{duration: 0.6, delay: 0.3}} className="px-6 py-3 md:px-8 md:py-4 font-oswald text-white bg-[#00A149] rounded-lg text-sm md:text-lg flex gap-2">
                       <img src={Car} alt="" className='w-5'/>
                       <p className=''>Order Now</p>
-                </button>
+                </motion.button>
             </div>
         </div>
         <img src={Frenfries} alt="" className='absolute w-[90px] md:w-[150px] bottom-0' />

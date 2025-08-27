@@ -89,18 +89,18 @@ const PopularFoods = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }} className='w-full bg-gray-100 py-16 px-6' id='fastfoods'>
         <div className='text-center mb-10'>
-            <p className='text-[17px] font-bold font-oswald text-[#00A149]'>crispy, every bite taste</p>
-            <p className='text-[36px] md:text-[50px] font-bold font-oswald text-[#212121]'>Popular Fast Foods</p>
+            <motion.p initial={{y: -20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: 0.3, duration: 0.5}} className='text-[17px] font-bold font-oswald text-[#00A149]'>crispy, every bite taste</motion.p>
+            <motion.p initial={{y: -20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: 0.5, duration: 0.5}} className='text-[36px] md:text-[50px] font-bold font-oswald text-[#212121]'>Popular Fast Foods</motion.p>
         </div>
 
         <div className="flex justify-center">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-9">
+            <motion.div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-9">
                 {products.map((item) => (
-                <motion.div initial={{ y: -150, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}     
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                <motion.div initial={{opacity: 0, scale: 0.9}}
+                    whileInView={{opacity: 1, scale:1}}
+                    transition={{duration: 0.6}}
                     key={item.id}
-                    className="bg-white rounded-lg w-full max-w-[190px] md:max-w-[210px] md:h-fit shadow-lg hover:shadow-2xl px-8 py-3 relative transition">
+                    className="bg-white rounded-lg w-full max-w-[190px] md:max-w-[230px] md:h-fit shadow-lg hover:shadow-2xl px-8 py-3 relative transition">
                     <button>
                         <img src={Like} alt="" className="absolute -top-[10px] md:-top-5 left-3 w-[45px] md:w-[60px]"/>
                     </button>
@@ -118,13 +118,14 @@ const PopularFoods = () => {
                     </div>
                 </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </div>
              <div className='flex items-center justify-center mt-5'>
-                <button className='bg-[#EE284B] rounded-[9px]  font-oswald font-semibold w-[110px] h-[40px] md:w-[170px] md:h-[50px] text-white items-center justify-center flex flex-row gap-2 mt-3 transition-transform duration-300 hover:-translate-y-2'>
+                <motion.button whileHover={{ scale: 1.05, y: -2 }}  //
+                    whileTap={{ scale: 0.95, y: 1 }}  className='bg-[#EE284B] rounded-[9px]  font-oswald font-semibold w-[110px] h-[40px] md:w-[170px] md:h-[50px] text-white items-center justify-center flex flex-row gap-2 mt-3 transition-transform duration-300 hover:-translate-y-2'>
                     <img src={Car} alt="" className='transition-transform duration-300 hover:-translate-x-3 w-[18px] md:w-[22px]' />
                     <p className='text-[14px] md:text-[17px]'>View More</p>
-                </button>
+                </motion.button>
             </div>                   
     </motion.div>
   )

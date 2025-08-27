@@ -114,7 +114,7 @@ const Banner = () => {
         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
         className='font-oswald flex flex-col items-center lg:items-start relative w-full lg:w-auto'
       >
-        <img src={Slice} alt="" className='absolute left-0 hidden sm:block'/>
+        <img src={Slice} alt="" className='absolute left-0 hidden sm:block md:left-[-190px] md:bottom-[-100px]'/>
         <p className='font-semibold text-[16px] sm:text-[20px] text-[#FFC222] mb-2'>crispy, every bite taste</p>
         <motion.div 
           initial={{ scale: 0.8 }}
@@ -133,7 +133,7 @@ const Banner = () => {
         </div>
 
         <button className='bg-[#EE284B] rounded-[9px] font-oswald font-semibold w-[160px] sm:w-[212px] h-[50px] sm:h-[65px] text-white flex items-center justify-center gap-2 mt-3 transition-transform duration-300 hover:-translate-y-1 sm:hover:-translate-y-2'>
-          <img src={Car} alt="" className='w-5 h-5 sm:w-6 sm:h-6'/>
+          <img src={Car} alt="" className='w-5 h-5 sm:w-6 sm:h-6 transform transition-transform duration-500 group-hover:translate-x-[10px]'/>
           <p className='text-[14px] sm:text-[17px]'>Order Now</p>
         </button>
       </motion.div>

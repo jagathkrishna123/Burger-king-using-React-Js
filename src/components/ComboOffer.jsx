@@ -5,6 +5,7 @@ import Button3 from "../assets/button3.svg"
 import Drinks from "../assets/drinks.svg"
 import Backgroundimg from "../assets/bg.jpg"
 import Footer from "../assets/footer.svg"
+import { motion } from 'framer-motion'
 
 
 
@@ -20,9 +21,9 @@ const ComboOffer = () => {
         <div className='flex flex-col items-center justify-center  flex-1 m-4 md:m-0 '>
             <div className='flex flex-col '>
                 <div className='md:leading-none m-2 md:m-1'>
-                <p className='font-oswald font-bold text-[17px] text-[#00A149]'>CRISPY, EVERY BITE TASTE</p>
-                <p className='font-oswald font-bold text-[36px] md:text-[50px] text-[#212121]'>Trending Food combo</p>
-                <p className='font-oswald font-bold text-[36px] md:text-[50px] text-[#212121]'>offer less <span className='text-[#00A149]'>20%</span></p>
+                <motion.p initial={{y: -20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: 0.3, duration: 0.5}} className='font-oswald font-bold text-[17px] text-[#00A149]'>CRISPY, EVERY BITE TASTE</motion.p>
+                <motion.p initial={{y: -20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: 0.5, duration: 0.5}} className='font-oswald font-bold text-[36px] md:text-[50px] text-[#212121]'>Trending Food combo</motion.p>
+                <motion.p initial={{y: -20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: 0.3, duration: 0.5}} className='font-oswald font-bold text-[36px] md:text-[50px] text-[#212121]'>offer less <span className='text-[#00A149]'>20%</span></motion.p>
                 <p className='text-[#5C5C5B] font-oswald text-[17px]'>A team of dreamers and doers building unique interactive music and art festivals.</p>
                 </div>
                 <div className='mt-7 flex flex-col gap-3 p-[20px] md:p-0'>

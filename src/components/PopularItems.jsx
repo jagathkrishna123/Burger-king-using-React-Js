@@ -43,8 +43,8 @@ const PopularItems = () => {
     <div className='w-full h-full bg-slate-100 items-center justify-center md:px-20 mt-[80px]' id='items'>
         <div className='flex flex-row p-[10px] md:p-[50px] gap-auto justify-between'>
             <div className='flex flex-col'>
-                <p className='font-oswald font-bold text-[17px] text-[#00A149]'>crispy, every bite taste</p>
-                <p className='font-oswald font-bold text-[36px] md:text-[50px] text-[#212121] flex '>Popular Food Items</p>
+                <motion.p initial={{y: -20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: 0.3, duration: 0.5}} className='font-oswald font-bold text-[17px] text-[#00A149]'>crispy, every bite taste</motion.p>
+                <motion.p initial={{y: -20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: 0.5, duration: 0.5}} className='font-oswald font-bold text-[36px] md:text-[50px] text-[#212121] flex '>Popular Food Items</motion.p>
             </div>
             <div className='flex flex-row '>
                 <img src={arrowleft} alt="" className='mb-3 w-[32px] md:w-[50px] invert'/>
@@ -53,19 +53,25 @@ const PopularItems = () => {
         </div>
         <div className='w-full'>
 
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mt-6 px-2'>
+            <motion.div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 mt-6 px-2'>
                 {carddetails.map((item, index)=> (
                     
-                    <motion.div initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }} key={index} className=" rounded-[14px] shadow-2xl hover:shadow-lg text-center transition bg-white w-full h-auto cursor-pointer p-2">
+                    <motion.div initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{
+        type: "spring",       // 🌟 spring physics
+        stiffness: 120,       // how "tight" the spring is
+        damping: 12,          // controls bounce
+        delay: 0.1 * index,   // staggered but quick
+      }}
+      viewport={{ once: true }} key={index} className=" rounded-[14px] shadow-2xl hover:shadow-lg text-center transition bg-white w-full h-auto cursor-pointer p-2">
                         <img src={item.img} alt={item.title}
                         className="mx-auto object-contain mb-4 top-[20px] left-[39px] w-[150px] h-[150px]"/>
                         <h3 className="font-bold font-oswald text-[20px] md:text-[28px]">{item.title}</h3>
                         <p className="text-[#FFC222] text-[17px] font-semibold font-oswald">{item.products}</p>
                     </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </div>
         <div className='flex flex-col gap-4'>
         <div className='flex flex-col md:flex-row items-center justify-center mt-[25px] gap-2 relative mb-2'>

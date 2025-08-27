@@ -39,6 +39,8 @@ import React from 'react'
 import Car from "../assets/car.svg"
 import Delboy from "../assets/delboy.svg"
 import Pic1 from "../assets/pic1.svg"
+import { motion } from 'framer-motion'
+
 
 const Delivery = () => {
   return (
@@ -48,20 +50,22 @@ const Delivery = () => {
         {/* Left side */}
         <div className="flex flex-col items-center justify-center p-6 md:p-10">
           <div className="flex flex-col items-center md:items-start relative text-center md:text-left">
-            <p className="text-[#FFC222] font-bold text-[15px] md:text-[17px] font-oswald">
+            <motion.p initial={{y: -20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: 0.3, duration: 0.5}} className="text-[#FFC222] font-bold text-[15px] md:text-[17px] font-oswald">
               Crispy, Every Bite Taste
-            </p>
+            </motion.p>
             <img src={Pic1} alt="" className="absolute top-5 right-0 hidden md:block" />
-            <p className="font-bold text-[32px] md:text-[60px] font-oswald text-white leading-snug">
+            <motion.p initial={{y: -20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: 0.5, duration: 0.5}} className="font-bold text-[32px] md:text-[60px] font-oswald text-white leading-snug">
               30 Minutes Fast
-            </p>
-            <p className="font-bold text-[28px] md:text-[60px] font-oswald text-white leading-snug">
+            </motion.p>
+            <motion.p initial={{y: -20, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{delay: 0.5, duration: 0.5}} className="font-bold text-[28px] md:text-[60px] font-oswald text-white leading-snug">
               <span className="text-[#FFC222] text-[32px] md:text-[60px]">Delivery</span> Challenge
-            </p>
-            <button className="bg-white rounded-[9px] font-oswald shadow-lg font-semibold w-[160px] h-[48px] md:w-[212px] md:h-[65px] flex items-center justify-center gap-2 mt-6 transition-transform duration-300 hover:-translate-y-2">
+            </motion.p>
+            <motion.button initial={{y: 20, opacity: 0}}
+                whileInView={{y: 0, opacity: 1}}
+                transition={{duration: 0.6, delay: 0.7}} className="bg-white rounded-[9px] font-oswald shadow-lg font-semibold w-[160px] h-[48px] md:w-[212px] md:h-[65px] flex items-center justify-center gap-2 mt-6 transition-transform duration-300 hover:-translate-y-2">
               <img src={Car} alt="" className="invert w-5 md:w-6" />
               <p className="text-[15px] md:text-[17px] font-semibold text-[#212121]">Order Now</p>
-            </button>
+            </motion.button>
           </div>
         </div>
 
